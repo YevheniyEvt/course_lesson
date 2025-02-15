@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cloudinary-video-player@2.3.1/dist/cld-video-player.min.css"
+ crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/cloudinary-video-player@2.3.1/dist/cld-video-player.min.js"
+ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
+
+<!-- <script >
+    const videoPlayerClassName = 'cfe-video';
+    const videoPLayerElements = document.getElementsByClassName(videoPlayerClassName);
+    console.log(videoPLayerElements);
+    for (videoPLayerElement of videoPLayerElements) {
+        const videoPlayerId = videoPLayerElement.dataset.publickId;
+        const cloudName = videoPLayerElement.dataset.cloudName;
+        const videoUrl = videoPLayerElement.dataset.videoUrl;
+        if (cloudName && videoUrl) {
+            const cld = cloudinary.videoPlayer(videoPlayerId, {
+                cloudName: cloudName
+            });
+            cld.source(videoUrl);
+        }
+    }
+</script> -->
+
+<script defer>
+    function renderVideo(){
+        const videoPlayerClassName = 'cfe-video';
+        const videoPLayerElements = document.getElementsByClassName(videoPlayerClassName);
+        console.log(videoPLayerElements);
+        for (videoPLayerElement of videoPLayerElements) {
+            const videoPlayerId = videoPLayerElement.dataset.publickId;
+            const cloudName = videoPLayerElement.dataset.cloudName;
+            const videoUrl = videoPLayerElement.dataset.videoUrl;
+            if (cloudName && videoUrl) {
+                const cld = cloudinary.videoPlayer(videoPlayerId, {
+                    cloudName: cloudName
+                });
+                cld.source(videoUrl);
+            }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', renderVideo)
+</script>
